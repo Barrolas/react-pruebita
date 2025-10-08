@@ -25,7 +25,7 @@ function CalculadoraRemuneracion() {
     };
 
     return (
-        <div className="row mt-3 bg-dark text-white p-3">
+        <div className="row mt-3 bg-danger text-white p-5">
             <div className="col-12">
                 <h1>Recursos Humanos</h1>
                 <p>Cálculo de remuneración</p>
