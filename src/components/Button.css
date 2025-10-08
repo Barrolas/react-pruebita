@@ -1,0 +1,243 @@
+/* Componente Button Reutilizable - Estilo Airbnb */
+
+.btn-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    user-select: none;
+    outline: none;
+}
+
+.btn-custom:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+.btn-custom:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Tamaños */
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    min-height: 2rem;
+}
+
+.btn-medium {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    min-height: 2.5rem;
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    min-height: 3rem;
+}
+
+/* Variantes de color */
+.btn-primary {
+    background: linear-gradient(135deg, #ff5a5f 0%, #e00b41 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(224, 11, 65, 0.3);
+}
+
+.btn-primary:hover:not(.btn-disabled):not(.btn-loading) {
+    background: linear-gradient(135deg, #e00b41 0%, #c00a37 100%);
+    box-shadow: 0 4px 12px rgba(224, 11, 65, 0.4);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: white;
+    color: #222;
+    border: 1px solid #dddddd;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover:not(.btn-disabled):not(.btn-loading) {
+    background: #f7f7f7;
+    border-color: #222;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: #222;
+    border: 1px solid transparent;
+}
+
+.btn-ghost:hover:not(.btn-disabled):not(.btn-loading) {
+    background: #f7f7f7;
+    border-color: #dddddd;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #ff5a5f;
+    border: 1px solid #ff5a5f;
+}
+
+.btn-outline:hover:not(.btn-disabled):not(.btn-loading) {
+    background: #ff5a5f;
+    color: white;
+}
+
+.btn-success {
+    background: #00a699;
+    color: white;
+}
+
+.btn-success:hover:not(.btn-disabled):not(.btn-loading) {
+    background: #008a7d;
+    transform: translateY(-1px);
+}
+
+.btn-warning {
+    background: #fc642d;
+    color: white;
+}
+
+.btn-warning:hover:not(.btn-disabled):not(.btn-loading) {
+    background: #e55a27;
+    transform: translateY(-1px);
+}
+
+/* Estados especiales */
+.btn-full-width {
+    width: 100%;
+}
+
+.btn-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.btn-loading {
+    cursor: wait;
+    color: transparent;
+}
+
+.btn-loading .btn-content {
+    opacity: 0;
+}
+
+/* Spinner de carga */
+.btn-spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spinner-circle {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Iconos */
+.btn-icon {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.btn-icon-left {
+    margin-right: 0.25rem;
+}
+
+.btn-icon-right {
+    margin-left: 0.25rem;
+}
+
+/* Efectos especiales */
+.btn-custom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-custom:hover:not(.btn-disabled):not(.btn-loading)::before {
+    left: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .btn-large {
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
+        min-height: 2.75rem;
+    }
+    
+    .btn-medium {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.9375rem;
+        min-height: 2.25rem;
+    }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .btn-custom {
+        transition: none;
+    }
+    
+    .btn-custom:hover:not(.btn-disabled):not(.btn-loading) {
+        transform: none;
+    }
+    
+    .spinner-circle {
+        animation: none;
+    }
+}
+
+/* Modo oscuro (si se implementa en el futuro) */
+@media (prefers-color-scheme: dark) {
+    .btn-secondary {
+        background: #2a2a2a;
+        color: white;
+        border-color: #404040;
+    }
+    
+    .btn-secondary:hover:not(.btn-disabled):not(.btn-loading) {
+        background: #404040;
+        border-color: white;
+    }
+    
+    .btn-ghost {
+        color: white;
+    }
+    
+    .btn-ghost:hover:not(.btn-disabled):not(.btn-loading) {
+        background: #404040;
+        border-color: #666;
+    }
+}

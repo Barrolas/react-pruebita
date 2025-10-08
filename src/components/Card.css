@@ -1,0 +1,77 @@
+/* Estilos para cards estilo Airbnb */
+
+.airbnb-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 12px !important;
+    overflow: hidden;
+}
+
+.airbnb-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.airbnb-card .card-img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.airbnb-card:hover .card-img {
+    transform: scale(1.05);
+}
+
+/* Estilo para el corazón de favoritos */
+.airbnb-card .favorite-heart {
+    transition: all 0.2s ease-in-out;
+    opacity: 0.8;
+}
+
+.airbnb-card:hover .favorite-heart {
+    opacity: 1;
+}
+
+/* Animación suave para el precio */
+.airbnb-card .price {
+    transition: color 0.2s ease-in-out;
+}
+
+.airbnb-card:hover .price {
+    color: #e00b41 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .airbnb-card {
+        margin-bottom: 1rem;
+    }
+    
+    .airbnb-card .card-img {
+        height: 200px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .airbnb-card .card-img {
+        height: 180px !important;
+    }
+}
+
+/* Estilo para superhost badge */
+.superhost-badge {
+    background: linear-gradient(135deg, #ff5a5f 0%, #e00b41 100%);
+    box-shadow: 0 2px 8px rgba(224, 11, 65, 0.3);
+}
+
+/* Estilo para ratings */
+.rating-star {
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+/* Mejoras de accesibilidad */
+.airbnb-card:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+.airbnb-card[role="button"] {
+    cursor: pointer;
+}
